@@ -30,7 +30,7 @@ MVP list:
 
 
 Post-MVP: 
-1)	None atm (will update this at a later time)
+1)	mini-projects, make some games
 
 
 Functional Components: 
@@ -51,3 +51,4 @@ Post-MVP:
 
 |Component|Difficulty|Est. Time|Time Invested|Actual Time|
 |---------|--------------------|---------|-------------|-----------|
+|mini-projects, make some games|Medium|4Hrs.|||
