@@ -15,7 +15,7 @@ Google Sheet link: https://docs.google.com/spreadsheets/d/1MiYUM5Rr0hr_9kbYVNgYz
 Wireframe:
  
 
-Time-Priority Index: !['Time/Priority Index'](Project-Images/time-priority-matrix_frontend.jpg)
+Time-Priority Index: !['Project-Images/time-priority-matrix_frontend.jpg'](Project-Images/time-priority-matrix_frontend.jpg)
  
 MVP list:
 1)	Full CRUD to create, read, update/edit, and delete a quote all on the front end utilizing backend CRUD functions
