@@ -13,8 +13,6 @@ Google Sheet link: https://docs.google.com/spreadsheets/d/1MiYUM5Rr0hr_9kbYVNgYz
 
 
 Wireframe:
-
-Wireframe: !['Wireframe (same for every type of device basically'](image3.jpeg)
  
 
 Time-Priority Index: !['Time/Priority Index'](image4 copy.jpeg)
@@ -44,7 +42,7 @@ MVP:
 |Responsive styling|Low|< 1 Hr.||| 		
 |HTML and CSS|Low|< 1 Hr.||| 		
 |Hamburger menu|Low|< 1 Hr.|||
-|Bootstrap|High|3 Hrs.|||		
+|Bootstrap|High|3 Hrs.|||	
 		
 
 Post-MVP:
