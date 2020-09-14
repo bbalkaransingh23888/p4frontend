@@ -15,7 +15,8 @@ Google Sheet link: https://docs.google.com/spreadsheets/d/1MiYUM5Rr0hr_9kbYVNgYz
 Wireframe:
  
 
-!['Time-Priority Index: Frontend'](/Users/marilynbalkaransingh/Documents/Project4/p4frontend/time-priority-matrix_frontend.jpg)
+Time-Priority-Index: 
+https://docs.google.com/document/d/1_gs-IZrjV9KuPCdeL8XAsMTU0re5MtEnDue9dB0HAeE/edit
  
 MVP list:
 1)	Full CRUD to create, read, update/edit, and delete a quote all on the front end utilizing backend CRUD functions
