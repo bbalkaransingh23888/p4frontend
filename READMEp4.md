@@ -12,7 +12,13 @@ GitHub Repo: https://github.com/bbalkaransingh23888/p4frontend.git
 Google Sheet link: https://docs.google.com/spreadsheets/d/1MiYUM5Rr0hr_9kbYVNgYzxu88jngsMA9udl1Ox-z7Vw/edit#gid=0
 
 
-Wireframe:
+Wireframes:
+
+Login: https://www.figma.com/file/KdMRIXSB9gRxc03yxhnhkZ/Untitled?node-id=0%3A1
+
+Category: https://www.figma.com/file/KdMRIXSB9gRxc03yxhnhkZ/Untitled?node-id=1%3A7
+
+Games: https://www.figma.com/file/KdMRIXSB9gRxc03yxhnhkZ/Untitled?node-id=1%3A9
  
 
 Time-Priority-Index: 
