@@ -32,7 +32,9 @@
             <a class="button is-primary">
                <router-link to="/signup">Sign Up</router-link>
             </a>
+            <a class="button is-primary">
             <router-link to="/login">Log in</router-link>
+            </a>
           </div>
         </b-navbar-item>
       </template>
