@@ -29,9 +29,9 @@
       <template slot="end">
         <b-navbar-item tag="div">
           <div class="buttons">
-            <a class="button is-primary">
+            <button>
                <router-link to="/signup">Sign Up</router-link>
-            </a>
+            </button>
             <router-link to="/login">Log in</router-link>
           </div>
         </b-navbar-item>
