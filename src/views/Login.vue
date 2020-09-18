@@ -4,7 +4,7 @@
             <b-input value="username"></b-input>
         </b-field>
         <b-field label="password">
-            <b-input type="password" value="password" placeholder="password"></b-input>
+            <b-input type="password" value="" placeholder="password"></b-input>
         </b-field>
 
   </div>
