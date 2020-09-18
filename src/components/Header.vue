@@ -32,7 +32,9 @@
             <button>
                <router-link to="/signup">Sign Up</router-link>
             </button>
+            <button>
             <router-link to="/login">Log in</router-link>
+            </button>
           </div>
         </b-navbar-item>
       </template>
