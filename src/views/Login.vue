@@ -2,7 +2,8 @@
   <div class="login">
        <input class="input is-primary" type="text" v-model="username"/>
        <input class="input is-primary" type="text" v-model="username"/>
-       <button> Log In </button>
+       <br/>
+       <button class="button is-danger"> Log In </button>
   </div>
 </template>
 
