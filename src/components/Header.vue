@@ -29,12 +29,10 @@
       <template slot="end">
         <b-navbar-item tag="div">
           <div class="buttons">
-            <button>
+            <a class="button is-primary">
                <router-link to="/signup">Sign Up</router-link>
-            </button>
-            <button>
+            </a>
             <router-link to="/login">Log in</router-link>
-            </button>
           </div>
         </b-navbar-item>
       </template>
