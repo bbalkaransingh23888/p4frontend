@@ -1,18 +1,19 @@
 <template>
   <div class="login">
-        <b-field label="username">
-            <b-input value="username"></b-input>
-        </b-field>
-        <b-field label="password">
-            <b-input type="password" value="" placeholder="password"></b-input>
-        </b-field>
-
+       <input type="text" v-model="username"/>
+       <input type="text" v-model="username"/>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'Login'
-}
+  name: 'Login',
+  data: function(){
+    return {
+    username: '',
+    password: ''
+    }
+  },
+};
 </script>
