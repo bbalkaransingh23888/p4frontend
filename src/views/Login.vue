@@ -1,5 +1,11 @@
 <template>
   <div class="login">
+        <b-field label="username">
+            <b-input value="username"></b-input>
+        </b-field>
+        <b-field label="password">
+            <b-input type="password" value="password" placeholder="password"></b-input>
+        </b-field>
 
   </div>
 </template>
