@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <Header v-bind:URL="URL" />
+      <Header v-bind:URL="URL"/>
       <router-view  @loggedIn='login($event)'/>
       <Footer/>
     </div>
@@ -21,14 +21,14 @@ export default {
   data:function(){
     return {
       loggedIn: false,
-      token: '',
+      tokens: {},
       URL: 'https://p4backend23888.herokuapp.com/'
     }
   },
   methods: {
     login: function(event){
       this.loggedIn = true
-      this.token = event
+      this.tokens = event
       this.$router.push('/')
     }
   }

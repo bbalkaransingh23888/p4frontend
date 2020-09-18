@@ -44,11 +44,7 @@
 
 <script>
 export default {
-  name: "Header",
-  props: [':URL'],
-  data: function () {
-    // URL: this.URL
-  }
+  name: "Header"
 };
 </script>
 

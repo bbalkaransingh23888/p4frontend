@@ -19,13 +19,13 @@ Vue.use(VueRouter)
     component: Page2
   },
   {
-    path: '/',
+    path: '/login',
     name: 'Login',
     component: Login, 
     props: true
   },
   {
-    path: '/',
+    path: '/signup',
     name: 'Signup',
     component: Signup
   }

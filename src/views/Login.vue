@@ -19,10 +19,10 @@ export default {
   },
   methods: {
       handleLogin: function(){
-          fetch('/http://www.localhost:8000/auth/users/login/', {
+          fetch('https://p4backend23888.herokuapp.com/auth/users/login/', {
               method: 'post',
               headers: {
-                  "Content-type": "application/json",
+                  "Content-Type": "application/json",
               },
               body: JSON.stringify({
                   username: this.username,
