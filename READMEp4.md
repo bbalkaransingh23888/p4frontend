@@ -41,13 +41,13 @@ MVP list:
 3)	Responsiveness 
 4)	Basic HTML and CSS
 5)	Hamburger menu
-6)  Bootstrap
+
 
 
 
 Post-MVP: 
 1)	mini-projects, make some games
-
+2)  Bootstrap styling
 
 Functional Components: 
 
