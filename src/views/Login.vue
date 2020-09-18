@@ -12,8 +12,8 @@ export default {
   name: 'Login',
   data: function(){
     return {
-    username: '',
-    password: ''
+    username: "",
+    password: ""
     }
   },
 };
