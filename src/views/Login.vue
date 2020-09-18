@@ -17,5 +17,10 @@ export default {
     password: ""
     };
   },
+  methods: {
+      handleLogin: function(){
+          fetch('/http://www.localhost:8000/auth/users/login/')
+      }
+  }
 };
 </script>
