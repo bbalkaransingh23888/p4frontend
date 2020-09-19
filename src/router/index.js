@@ -16,7 +16,8 @@ Vue.use(VueRouter)
   {
     path: '/main',
     name: 'Main',
-    component: Main
+    component: Main,
+    props: true
   },
   {
     path: '/login',

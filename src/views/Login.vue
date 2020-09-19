@@ -9,8 +9,6 @@
           <b-field label="Password">
               <b-input type="password" v-model="password" password-reveal></b-input>
           </b-field>
-       <!-- <input class="input is-primary" type="text" v-model="username"/>
-       <input class="input is-primary" type="text" v-model="username"/> -->
        <br/>
        <button class="button is-danger" @click="handleLogin"> Log In </button>
   </div>

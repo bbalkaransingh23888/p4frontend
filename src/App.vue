@@ -21,19 +21,19 @@ export default {
   data:function(){
     return {
       loggedIn: false,
-      tokens: {},
+      token: {},
       URL: 'https://p4backend23888.herokuapp.com'
     }
   },
   methods: {
     login: function(event){
       this.loggedIn = true
-      this.tokens = event
+      this.token = event
       this.$router.push({path: 'Main', query: {tokens: this.tokens, URL: this.URL}});
     },
     logout: function(){
       this.loggedIn = false
-      this.tokens = {}
+      this.token = {}
       this.$router.push('/home')
     }
   }
