@@ -30,7 +30,7 @@ export default {
   //   newCategory: function(){
   //   const{ tokens, URL } = this.$route.query;
 
-  //   fetch(`${this.$route.query.URL}/api/categories`, {
+  //   fetch(`${URL}/api/categories`, {
   //     method: "post",
   //     headers: {
   //       authorization: `jwt ${tokens.access}`,
@@ -44,7 +44,7 @@ export default {
   //     getCategories: function(){
   //     const { tokens, URL } = this.$route.query;
 
-  //     fetch(`${this.$route.query.URL}/api/categories/`, {
+  //     fetch(`${URL}/api/categories/`, {
   //       method: "get",
   //       headers: {
   //         authorization: `jwt ${tokens.access}`,

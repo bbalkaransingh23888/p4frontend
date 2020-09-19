@@ -28,7 +28,7 @@ export default {
   },
   methods: {
       handleLogin: function(){
-          fetch(`${URL}/auth/users/register/`, {       
+          fetch(`${this.$route.query.URL}/auth/users/register/`, {       //this.$route.query.URL
               method: 'post',
               headers: {
                   "Content-Type": "application/json",
@@ -37,7 +37,8 @@ export default {
                   username: this.username,
                   password: this.password,
               }),
-          }).then(response => response.json())
+          })
+          .then(response => response.json())
           .then(data => {
               console.log(data)
               this.$emit("loggedIn", data)
