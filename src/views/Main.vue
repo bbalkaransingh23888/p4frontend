@@ -15,44 +15,45 @@
 
 <script>
 
-// export default {
-//   name: 'Main',
-//   data: function(){
-//     return {
-//       categories: [],
-//       games: []
-//     }
-//   },
-//   created: function(){
-//     this.getCategories();
-//     },
-//     newCategory: function(){
-//       const{ tokens, URL } = this.$route.query;
+export default {
+  name: 'Main',
+  data: function(){
+    return {
+      categories: [],
+      games: []
+    }
+  },
+  // created: function(){
+  //   this.getCategories();
+  //   },
+  //   methods: {
+  //   newCategory: function(){
+  //   const{ tokens, URL } = this.$route.query;
 
-//       fetch(`${URL}/api/categories`, {
-//         method: "post",
-//         headers: {
-//           authorization: `jwt ${tokens.access}`
-//         },
-//         body: JSON.stringify({ category: this.category }),
-//       }).then(() => {
-//         this.getCategories();
-//       });
-//     },
-//     methods: {
-//       getCategories: function(){
-//       const { tokens, URL } = this.$route.query;
+  //   fetch(`${URL}/api/categories`, {
+  //     method: "post",
+  //     headers: {
+  //       authorization: `jwt ${tokens.access}`,
+  //       "Content-Type": "application/json" 
+  //     },
+  //     body: JSON.stringify({ category: this.category }),
+  //     }).then(() => {
+  //       this.getCategories();
+  //     });
+  //   },
+  //     getCategories: function(){
+  //     const { tokens, URL } = this.$route.query;
 
-//       fetch(`${URL}/api/categories/`, {
-//         method: "get",
-//         headers: {
-//           authorization: `jwt ${tokens.access}`,
-//         },
-//         body: JSON.stringify({category: this.category}),
-//       }).then((response) => {
-//         this.getCategories();
-//       });
-//     }
-//   }
-// }
-// </script>
+  //     fetch(`${URL}/api/categories/`, {
+  //       method: "get",
+  //       headers: {
+  //         authorization: `jwt ${tokens.access}`,
+  //       },
+  //       body: JSON.stringify({category: this.category}),
+  //     }).then((response) => {
+  //       this.getCategories();
+  //     });
+  //   }
+  // }
+}
+</script>
