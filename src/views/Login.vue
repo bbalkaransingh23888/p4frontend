@@ -28,7 +28,7 @@ export default {
   },
   methods: {
       handleLogin: function(){
-          fetch(`${this.$route.query.URL}/auth/users/register/`, {       
+          fetch(`${URL}/auth/users/register/`, {       
               method: 'post',
               headers: {
                   "Content-Type": "application/json",
