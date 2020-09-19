@@ -16,14 +16,9 @@
         <b-navbar-item href="#">
           <router-link to="/Page2">About</router-link>
         </b-navbar-item>
-        <b-navbar-dropdown label="Info">
-          <b-navbar-item href="#">
-            About
-          </b-navbar-item>
-          <b-navbar-item href="#">
-            Contact
-          </b-navbar-item>
-        </b-navbar-dropdown>
+        <b-navbar-item href="#">
+          Contact
+        </b-navbar-item>
       </template>
 
       <template slot="end">
@@ -33,7 +28,8 @@
                <router-link to="/signup">Sign Up</router-link>
             </a>
             <a class="button is-primary">
-            <router-link to="/login" v-bind:URL="URL">Log in</router-link>
+            <router-link :to="{ name: 'Login', query: {URL: this.URL}}" v-bind:URL="URL" v-if="!loggedIn">Log in</router-link>
+            <button v-if="loggedIn" @click=logout>Log Out</button>
             </a>
           </div>
         </b-navbar-item>
@@ -44,7 +40,13 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  props: ['URL', 'loggedIn'],
+  methods: {
+    logout: function(){
+      this.$emit('logout')
+    }
+  }
 };
 </script>
 

@@ -6,6 +6,8 @@ import "buefy/dist/buefy.css";
 
 Vue.use(Buefy);
 
+Vue.prototype.$URL='https://p4backend23888.herokuapp.com'
+
 Vue.config.productionTip = false;
 
 new Vue({

@@ -1,7 +1,16 @@
 <template>
   <div class="login">
-       <input class="input is-primary" type="text" v-model="username"/>
-       <input class="input is-primary" type="text" v-model="username"/>
+          <b-field label="Username"
+              type="is-success"
+              message="This username is available">
+              <b-input v-model="username"></b-input>
+          </b-field>
+
+          <b-field label="Password">
+              <b-input type="password" v-model="password" password-reveal></b-input>
+          </b-field>
+       <!-- <input class="input is-primary" type="text" v-model="username"/>
+       <input class="input is-primary" type="text" v-model="username"/> -->
        <br/>
        <button class="button is-danger" @click="handleLogin"> Log In </button>
   </div>
@@ -19,7 +28,7 @@ export default {
   },
   methods: {
       handleLogin: function(){
-          fetch('https://p4backend23888.herokuapp.com/auth/users/login/', {
+          fetch(`${this.$route.query.URL}/auth/users/register/`, {       //this.$route.query.URL
               method: 'post',
               headers: {
                   "Content-Type": "application/json",
