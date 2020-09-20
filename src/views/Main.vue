@@ -18,15 +18,17 @@
         {{category.name}}
         <button v-bind:id="category.id" @click="deleteCategory">Delete</button>
         <button v-bind:id="category.id" @click="() => editSelect(category.id, category.name)">Edit</button>
+        <Collapse />
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-
+import Collapse from '../components/Collapse'
 export default {
   name: 'Main',
+  components: {Collapse},
   data: function(){
     return {
       categories: [],
