@@ -28,8 +28,8 @@ export default {
   methods: {
     login: function(event){
       this.loggedIn = true
-      this.token = event
-      this.$router.push({path: 'Main', query: {tokens: this.tokens, URL: this.URL}});
+      this.token = event.token
+      this.$router.push({path: 'Main', query: {token: this.token, URL: this.URL}});
     },
     logout: function(){
       this.loggedIn = false

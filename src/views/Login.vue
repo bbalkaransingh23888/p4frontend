@@ -26,6 +26,7 @@ export default {
   },
   methods: {
       handleLogin: function(){
+          console.log(this.$route.query.URL)
           fetch(`${this.$route.query.URL}/auth/users/login/`, {       //this.$route.query.URL
               method: 'post',
               headers: {

@@ -9,7 +9,7 @@
         
         <!--Edit Category -->
         <b-field label="Category" type="is-danger" message="Edit category">
-            <b-input type="text" v-model="editcategory" maxlength="30"> </b-input>
+            <b-input type="text" v-model="editCategory" maxlength="30"> </b-input>
         </b-field>
         <b-button type="is-danger" @click="editCategory" v-bind:id="editid">Edit</b-button><br/><br/>
     
@@ -30,6 +30,7 @@ export default {
   data: function(){
     return {
       categories: [],
+      category: "",
       editCategory: "",
       editid: null
     }
@@ -41,8 +42,9 @@ export default {
      methods: {
 newCategory: function(){
     const{ token, URL } = this.$route.query;
-
-    fetch(`${URL}/api/categories`, {
+    console.log('token', token)
+    console.log('URL', URL)
+    fetch(`${URL}/api/categories/`, {
       method: "post",
       headers: {
         authorization: `JWT ${token}`,
@@ -61,7 +63,6 @@ getCategories: function(){
         headers: {
           authorization: `JWT ${token}`,
         },
-          body: JSON.stringify({category: this.category}),
         })
         .then((response) => response.json())
         .then((data) => {
