@@ -22,6 +22,7 @@ export default {
     return {
       loggedIn: false,
       token: {},
+      user: "",
       URL: 'https://p4backend23888.herokuapp.com'
     }
   },
@@ -29,7 +30,9 @@ export default {
     login: function(event){
       this.loggedIn = true
       this.token = event.token
-      this.$router.push({path: 'Main', query: {token: this.token, URL: this.URL}});
+      console.log('user',event)
+      this.user = event.username
+      this.$router.push({path: 'Main', query: {token: this.token, URL: this.URL, owner: this.username}});
     },
     logout: function(){
       this.loggedIn = false

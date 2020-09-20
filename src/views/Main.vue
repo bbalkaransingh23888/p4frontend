@@ -9,15 +9,15 @@
         
         <!--Edit Category -->
         <b-field label="Category" type="is-danger" message="Edit category">
-            <b-input type="text" v-model="editCategory" maxlength="30"> </b-input>
+            <b-input type="text" v-model="edit" maxlength="30"> </b-input>
         </b-field>
-        <b-button type="is-danger" @click="editCategory" v-bind:id="editid">Edit</b-button><br/><br/>
+        <b-button type="is-danger" @click="editCategory" v-bind:id="editid">Confirm Edit</b-button><br/><br/>
     
     <ul>
       <li v-for="category of categories" v-bind:key="category.id">
         {{category.name}}
-        <b-button type="is-danger" v-bind:id="category.id" @click="deleteCategory">Delete</b-button>
-        <b-button type="is-danger" v-bind:id="category.id" @click="() => editSelect(category.id, category.name)">Edit</b-button>
+        <button v-bind:id="category.id" @click="deleteCategory">Delete</button>
+        <button v-bind:id="category.id" @click="() => editSelect(category.id, category.name)">Edit</button>
       </li>
     </ul>
   </div>
@@ -31,7 +31,7 @@ export default {
     return {
       categories: [],
       category: "",
-      editCategory: "",
+      edit: "",
       editid: null
     }
   },
@@ -41,16 +41,14 @@ export default {
     },
      methods: {
 newCategory: function(){
-    const{ token, URL } = this.$route.query;
-    console.log('token', token)
-    console.log('URL', URL)
+    const{ token, URL, username } = this.$route.query;
     fetch(`${URL}/api/categories/`, {
       method: "post",
       headers: {
         authorization: `JWT ${token}`,
         "Content-Type": "application/json" 
       },
-      body: JSON.stringify({ category: this.category }),
+      body: JSON.stringify({ name: this.category , owner: username}),
       }).then(() => {
         this.getCategories();
       });
@@ -66,10 +64,10 @@ getCategories: function(){
         })
         .then((response) => response.json())
         .then((data) => {
-          this.categories = data;
+          this.categories = data.results;
         });
       },
-    deleteCategory: function(){
+    deleteCategory: function(event){
         const{ token, URL } = this.$route.query;
         const id = event.target.id
 
@@ -85,21 +83,24 @@ getCategories: function(){
       },
       editSelect: function(id, content){
         this.editid = id
-        this.editCategory = content
+        this.edit = content
       },
-    //   editCategory: function(){
-    //     const{ token, URL } = this.$route.query;
-    //     const id = this.editCategory
-
-    //     fetch(`${URL}/api/categories/${id}/`, {
-    //       method: "put",
-    //       headers: {
-    //         authorization: `JWT ${token}`,
-    //         "Content-Type": "application/json"
-    //       },
-    //       body: JSON.stringify({category: this.editCategory})
-    //     })
-    // },
+      editCategory: function(){
+        const{ token, URL } = this.$route.query;
+        console.log('edit', this.edit)
+        console.log('editCategory', this.editCategory)
+        fetch(`${URL}/api/categories/${this.editid}/`, {
+          method: "put",
+          headers: {
+            authorization: `JWT ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({name: this.edit})
+        })
+        .then(() => {
+        this.getCategories();
+      });
+    },
    }
   //Buggy area ends
 }
