@@ -6,7 +6,7 @@
         slot="trigger"
         aria-controls="contentIdForA11y1"
       >
-        Click me!
+        Games!
       </button>
       <div class="notification">
         <div class="content">
