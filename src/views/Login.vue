@@ -26,7 +26,7 @@ export default {
   },
   methods: {
       handleLogin: function(){
-          fetch(`${this.$route.query.URL}/auth/users/register/`, {       //this.$route.query.URL
+          fetch(`${this.$route.query.URL}/auth/users/login/`, {       //this.$route.query.URL
               method: 'post',
               headers: {
                   "Content-Type": "application/json",
@@ -37,27 +37,20 @@ export default {
               }),
           })
           //JENDRI's SOLUTION
-          // .then(response => {
-          //   if (response.status !==200){
-          //     response.json()
-          //   } else {
-          //     return response.json()
-          //   }
-          // })
-          // .then(data => {
-          //   console.log('data', data)
-          //   if (data){
-          //     this.$emit('loggedIn', data)
-          //   } else {
-          //     alert('Incorrect Login')
-          //   }
-          // })
-
-          //ALEX's CODE
-          .then(response => response.json())
+          .then(response => {
+            if (response.status !==200){
+              response.json()
+            } else {
+              return response.json()
+            }
+          })
           .then(data => {
-              console.log(data)
-              this.$emit("loggedIn", data)
+            console.log('data', data)
+            if (data){
+              this.$emit('loggedIn', data)
+            } else {
+              alert('Incorrect Login')
+            }
           });
       },
   },
