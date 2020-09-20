@@ -27,7 +27,7 @@ export default {
   methods: {
       handleLogin: function(){
           console.log(this.$route.query.URL)
-          fetch(`${this.$route.query.URL}/auth/users/login/`, {       //this.$route.query.URL
+          fetch(`${this.$route.query.URL}/auth/users/login/`, {    
               method: 'post',
               headers: {
                   "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export default {
                   password: this.password,
               }),
           })
-          //JENDRI's SOLUTION
+          //Jendri's solution to login issue, thanks! 
           .then(response => {
             if (response.status !==200){
               response.json()

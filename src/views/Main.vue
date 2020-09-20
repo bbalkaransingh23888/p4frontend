@@ -18,6 +18,9 @@
         {{category.name}}
         <button v-bind:id="category.id" @click="deleteCategory">Delete</button>
         <button v-bind:id="category.id" @click="() => editSelect(category.id, category.name)">Edit</button>
+        <!-- The collapse below allows me to collapse a menu, which I intend
+        to use for my games form. It is imported from the Collapse.vue file. 
+        S/o Rosemary for helping me out with this-->
         <Collapse />
       </li>
     </ul>
@@ -37,7 +40,7 @@ export default {
       editid: null
     }
   },
-  //Buggy area starts
+  //Fixed categories CRUD, thanks Rosemary!
   created: function(){
     this.getCategories();
     },
@@ -104,7 +107,6 @@ getCategories: function(){
       });
     },
    }
-  //Buggy area ends
 }
 </script>
 
