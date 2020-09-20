@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <Header v-bind:URL="URL" v-bind:loggedIn="loggedIn" @logout="logout"/>
-      <router-view  @loggedIn='login($event)'/>
+      <router-view  @loggedIn='login($event)' v-bind:loggedIn="loggedIn"/>
       <Footer/>
     </div>
   </div>

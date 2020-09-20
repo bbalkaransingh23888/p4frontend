@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main" v-if="loggedIn">
         
         <!--Create Category -->
         <b-field label="Category" type="is-danger" message="Create a category">
@@ -21,7 +21,8 @@
         <!-- The collapse below allows me to collapse a menu, which I intend
         to use for my games form. It is imported from the Collapse.vue file. 
         S/o Rosemary for helping me out with this-->
-        <Collapse />
+        <Collapse :games="category.games"/>
+        <!-- <div v-for="game of category.games" v-bind:key="game.id"> <p>{{game.title}}</p> </div> -->
       </li>
     </ul>
   </div>
@@ -32,6 +33,7 @@ import Collapse from '../components/Collapse'
 export default {
   name: 'Main',
   components: {Collapse},
+  props: ["loggedIn"],
   data: function(){
     return {
       categories: [],
@@ -70,6 +72,7 @@ getCategories: function(){
         .then((response) => response.json())
         .then((data) => {
           this.categories = data.results;
+          console.log(data.results[0].games)
         });
       },
     deleteCategory: function(event){

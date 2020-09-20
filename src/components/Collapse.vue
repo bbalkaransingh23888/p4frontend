@@ -8,15 +8,18 @@
       >
         Games!
       </button>
+      <div v-for="game of this.games" v-bind:key="game.id"><p>{{game.title}}</p> </div>
       <div class="notification">
         <div class="content">
+          
           <!--Create Game Form -->
-          <b-field label="Game" type="is-danger" message="Create a game">
-            <b-input label="Title" type="text" v-model="gametitle"> </b-input>
-            <b-input label="Image" type="text" v-model="gameimg"> </b-input>
-            <b-input label="Url" type="text" v-model="gameurl"> </b-input>
-            <b-input label="Description" type="text" v-model="gamedescription"> </b-input>
-            <b-input label="Additional Info" type="text" v-model="gameadditionalinfo"> </b-input>
+          <b-field label="Game" class="game" type="is-danger" message="Create a game">
+            
+            <b-input class = "game" type="text" v-model="gametitle"> Title </b-input>
+            <b-input class = "game" type="text" v-model="gameimg"> Image </b-input>
+            <b-input class = "game" type="text" v-model="gameurl"> URL </b-input>
+            <b-input class = "game" type="text" v-model="gamedescription"> Description </b-input>
+            <b-input class = "game" type="text" v-model="gameadditionalinfo"> Additional Info </b-input>
           </b-field>
           <b-button type="is-danger" @click="newGame">Create Game</b-button><br/><br/>
           <!-- Game form ends -->
@@ -31,3 +34,9 @@ export default {
   name: "Collapse",
 };
 </script>
+
+<style>
+  b-input {
+    display: inline-block;
+  }
+</style>
