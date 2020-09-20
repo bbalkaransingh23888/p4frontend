@@ -36,6 +36,24 @@ export default {
                   password: this.password,
               }),
           })
+          //JENDRI's SOLUTION
+          // .then(response => {
+          //   if (response.status !==200){
+          //     response.json()
+          //   } else {
+          //     return response.json()
+          //   }
+          // })
+          // .then(data => {
+          //   console.log('data', data)
+          //   if (data){
+          //     this.$emit('loggedIn', data)
+          //   } else {
+          //     alert('Incorrect Login')
+          //   }
+          // })
+
+          //ALEX's CODE
           .then(response => response.json())
           .then(data => {
               console.log(data)
