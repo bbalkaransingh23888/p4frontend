@@ -13,19 +13,19 @@
         <b-navbar-item href="#">
           <router-link to="/">Home</router-link>
         </b-navbar-item>
-        <b-navbar-item href="#">
+        <!-- <b-navbar-item href="#">
           <router-link to="/Page2">About</router-link>
         </b-navbar-item>
         <b-navbar-item href="#">
           Contact
-        </b-navbar-item>
+        </b-navbar-item> -->
       </template>
 
       <template slot="end">
         <b-navbar-item tag="div">
           <div class="buttons">
             <a class="button is-primary">
-               <router-link to="/signup">Sign Up</router-link>
+               <router-link to="/signup" v-if="!loggedIn">Sign Up</router-link>
             </a>
             <a class="button is-primary">
             <router-link :to="{ name: 'Login', query: {URL: this.URL}}" v-bind:URL="URL" v-if="!loggedIn">Log in</router-link>

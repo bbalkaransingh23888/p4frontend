@@ -22,7 +22,13 @@
         to use for my games form. It is imported from the Collapse.vue file. 
         S/o Rosemary for helping me out with this-->
         <Collapse :games="category.games"/>
-        <!-- <div v-for="game of category.games" v-bind:key="game.id"> <p>{{game.title}}</p> </div> -->
+        <div v-for="game of category.games" v-bind:key="game.id"> 
+          <p>{{game.title}} <br/>
+            {{game.img_url}} <br/>
+            {{game.game_url}} <br/>
+            {{game.description}} <br/>
+            {{game.additional_info}}</p> 
+        </div>
       </li>
     </ul>
   </div>
@@ -39,7 +45,8 @@ export default {
       categories: [],
       category: "",
       edit: "",
-      editid: null
+      editid: null,
+      games: []
     }
   },
   //Fixed categories CRUD, thanks Rosemary!
@@ -114,5 +121,5 @@ getCategories: function(){
 </script>
 
 <style>
-
+  
 </style>

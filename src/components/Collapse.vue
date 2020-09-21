@@ -6,21 +6,34 @@
         slot="trigger"
         aria-controls="contentIdForA11y1"
       >
-        Games!
+        Add Games!
       </button>
-      <div v-for="game of this.games" v-bind:key="game.id"><p>{{game.title}}</p> </div>
+    
       <div class="notification">
         <div class="content">
           
+          
           <!--Create Game Form -->
-          <b-field label="Game" class="game" type="is-danger" message="Create a game">
-            
-            <b-input class = "game" type="text" v-model="gametitle"> Title </b-input>
-            <b-input class = "game" type="text" v-model="gameimg"> Image </b-input>
-            <b-input class = "game" type="text" v-model="gameurl"> URL </b-input>
-            <b-input class = "game" type="text" v-model="gamedescription"> Description </b-input>
-            <b-input class = "game" type="text" v-model="gameadditionalinfo"> Additional Info </b-input>
+          <b-field label="Title" type="is-danger" message="Create a game">
+            <b-input class="game" type="text" v-model="gametitle"> Title </b-input>
           </b-field>
+
+          <b-field label="Image">
+            <b-input placeholder="URL" type="url" v-model="gameimg"> Image </b-input>
+          </b-field>
+
+          <b-field label="Game URL">
+            <b-input placeholder="URL" type="url" v-model="gameurl"></b-input>
+          </b-field>
+
+          <b-field label="Description">
+            <b-input maxlength="1000" type="textarea"></b-input>
+          </b-field>
+
+          <b-field label="Additional Info">
+            <b-input maxlength="1000" type="textarea"></b-input>
+          </b-field>
+  
           <b-button type="is-danger" @click="newGame">Create Game</b-button><br/><br/>
           <!-- Game form ends -->
         </div>
@@ -36,7 +49,5 @@ export default {
 </script>
 
 <style>
-  b-input {
-    display: inline-block;
-  }
+  
 </style>
