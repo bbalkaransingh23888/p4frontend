@@ -1,12 +1,10 @@
 <template>
   <div class="login">
-          <b-field label="Username"
-              type="is-success"
-              message="This username is available">
+          <b-field label="Username" type="is-success">
               <b-input v-model="username"></b-input>
           </b-field>
 
-          <b-field label="Password">
+          <b-field label="Password" type="is-success">
               <b-input type="password" v-model="password" password-reveal></b-input>
           </b-field>
        <br/>

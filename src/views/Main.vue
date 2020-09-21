@@ -18,10 +18,6 @@
         {{category.name}}
         <button v-bind:id="category.id" @click="deleteCategory">Delete</button>
         <button v-bind:id="category.id" @click="() => editSelect(category.id, category.name)">Edit</button>
-        <!-- The collapse below allows me to collapse a menu, which I intend
-        to use for my games form. It is imported from the Collapse.vue file. 
-        S/o Rosemary for helping me out with this-->
-        <Collapse :games="category.games"/>
         <div v-for="game of category.games" v-bind:key="game.id"> 
           <p>{{game.title}} <br/>
             {{game.img_url}} <br/>
@@ -29,6 +25,14 @@
             {{game.description}} <br/>
             {{game.additional_info}}</p> 
         </div>
+        <br/>
+        
+        <!-- The collapse below allows me to collapse a menu, which I intend
+        to use for my games form. It is imported from the Collapse.vue file. 
+        S/o Rosemary for helping me out with this-->
+        <Collapse :games="category.games"/>
+        <br/><br/><br/>
+        
       </li>
     </ul>
   </div>
