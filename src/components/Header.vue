@@ -26,13 +26,13 @@
       <template slot="end">
         <b-navbar-item tag="div">
           <div class="buttons">
-            <a class="button is-primary" v-if="!loggedIn">
+            <a class="button is-link" v-if="!loggedIn">
                <router-link to="/signup" v-if="!loggedIn">Sign Up</router-link>
             </a>
-            <a class="button is-primary">
+            <a class="button is-success" v-if="!loggedIn">
             <router-link :to="{ name: 'Login', query: {URL: this.URL}}" v-bind:URL="URL" v-if="!loggedIn">Log in</router-link>
-            <a class="button is-primary" v-if="loggedIn" @click=logout>Log Out</a>
             </a>
+            <a class="button is-warning" v-if="loggedIn" @click=logout>Log Out</a>
           </div>
         </b-navbar-item>
       </template>

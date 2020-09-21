@@ -49,8 +49,8 @@ export default {
   data: function(){
     return {
       gametitle:  "",
-      gameimgurl: "",
-      gamegameurl: "",
+      gameimage: "",
+      gameurl: "",
       gamedescription: "",
       gameadditionalinfo: ""
     }
@@ -58,13 +58,16 @@ export default {
   methods: {
     newGame: function(){
       const{ token, URL, username } = this.$route.query;
+      // const id = event.target.id
       fetch(`${URL}/api/games/`, {
         method: "post",
         headers: {
           authorization: `JWT ${token}`,
           "Content-Type": "application/json" 
         },
-        body: JSON.stringify({ name: this.category , owner: username}),
+        body: JSON.stringify({ 
+          title: this.gametitle , owner: username, image: this.gameimage, 
+          url: this.gameurl, description: this.gamedescription, additionalinfo: this.game}),
         }).then(() => {
         this.getCategories();
       });

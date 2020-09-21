@@ -8,7 +8,7 @@
               <b-input type="password" v-model="password" password-reveal></b-input>
           </b-field>
        <br/>
-       <button class="button is-danger" @click="handleLogin"> Log In </button>
+       <button class="button is-success" @click="handleLogin"> Log In </button>
   </div>
 </template>
 
