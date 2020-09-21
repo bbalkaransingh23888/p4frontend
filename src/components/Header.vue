@@ -14,10 +14,12 @@
           <router-link to="/">Home</router-link>
         </b-navbar-item>
         <!-- <b-navbar-item href="#">
-          <router-link to="/Page2">About</router-link>
+          <router-link to="/about">About</router-link>
         </b-navbar-item>
         <b-navbar-item href="#">
+          <router-link to="/contact">
           Contact
+          <router-link>
         </b-navbar-item> -->
       </template>
 
