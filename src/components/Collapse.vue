@@ -19,7 +19,7 @@
           </b-field>
 
           <b-field label="Image" type="is-danger">
-            <b-input placeholder="URL" type="url" v-model="gameimg"> Image </b-input>
+            <b-input placeholder="URL" type="url" v-model="gameimage"> Image </b-input>
           </b-field>
 
           <b-field label="Game URL" type="is-danger">
@@ -34,7 +34,7 @@
             <b-input maxlength="1000" type="textarea" v-model="gameadditionalinfo"></b-input>
           </b-field>
   
-          <b-button type="is-danger" @click="newGame">Create Game</b-button><br/><br/>
+          <b-button type="is-danger" @click="newGame(category_id, owner)">Create Game</b-button><br/><br/>
           <!-- Game form ends -->
         </div>
       </div>
@@ -45,7 +45,7 @@
 <script>
 export default {
   name: "Collapse",
-  props: ["loggedIn"], 
+  props: ["loggedIn", "category_id", "owner"], 
   data: function(){
     return {
       gametitle:  "",
@@ -56,9 +56,12 @@ export default {
     }
   },
   methods: {
-    newGame: function(){
+    newGame: function(category_id, owner){
       const{ token, URL, username } = this.$route.query;
       // const id = event.target.id
+      console.log("-------",category_id, owner)
+      console.log(URL, token, username)
+      console.log(this.gametitle, this.gameimage, this.gameurl, this.gamedescription, this.gameadditionalinfo)
       fetch(`${URL}/api/games/`, {
         method: "post",
         headers: {
@@ -66,10 +69,10 @@ export default {
           "Content-Type": "application/json" 
         },
         body: JSON.stringify({ 
-          title: this.gametitle , owner: username, image: this.gameimage, 
-          url: this.gameurl, description: this.gamedescription, additionalinfo: this.game}),
+          title:this.gametitle , category: category_id, owner:owner, image_url:this.gameimage, 
+          game_url:this.gameurl, description:this.gamedescription, additional_info:this.game}),
         }).then(() => {
-        this.getCategories();
+        //this.getCategories();
       });
     },
   }

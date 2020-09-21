@@ -16,8 +16,10 @@
     <ul>
       <li v-for="category of categories" v-bind:key="category.id">
         {{category.name}}
-        <button v-bind:id="category.id" @click="deleteCategory">Delete</button>
-        <button v-bind:id="category.id" @click="() => editSelect(category.id, category.name)">Edit</button>
+        <br/> <br/>
+        <b-button type="is-danger" v-bind:id="category.id" @click="deleteCategory(category.id)"> Delete </b-button>
+        <b-button type="is-warning" v-bind:id="category.id" @click="() => editSelect(category.id, category.name)"> Edit </b-button>
+        <br/> 
         <div v-for="game of category.games" v-bind:key="game.id"> 
           <p>{{game.title}} <br/>
             {{game.img_url}} <br/>
@@ -27,11 +29,11 @@
         </div>
         <br/>
         
-        <!-- The collapse below allows me to collapse a menu, which I intend
+        <!--The collapse below allows me to collapse a menu, which I intend
         to use for my games form. It is imported from the Collapse.vue file. 
         S/o Rosemary for helping me out with this-->
-        <Collapse :games="category.games"/>
-        <br/><br/><br/>
+        <Collapse :games="category.games" :category_id="category.id" :owner="category.owner"/>
+        <br/>
         
       </li>
     </ul>
@@ -50,7 +52,7 @@ export default {
       category: "",
       edit: "",
       editid: null,
-      games: []
+      //games: [],
     }
   },
   //Fixed categories CRUD, thanks Rosemary!
@@ -73,7 +75,6 @@ newCategory: function(){
     },
 getCategories: function(){
       const { token, URL } = this.$route.query;
-
       fetch(`${URL}/api/categories/`, {
         method: "get",
         headers: {
@@ -86,17 +87,16 @@ getCategories: function(){
           console.log(data.results[0].games)
         });
       },
-    deleteCategory: function(event){
+    deleteCategory: function(id){
         const{ token, URL } = this.$route.query;
-        const id = event.target.id
-
+        // const id = event.target.id
+        console.log(id)
         fetch(`${URL}/api/categories/${id}/`, {
           method: "delete",
           headers: {
             authorization: `JWT ${token}`,
           },
-        })
-        .then(() => {
+        }).then(() => {
           this.getCategories()
         });
       },
@@ -106,8 +106,6 @@ getCategories: function(){
       },
       editCategory: function(){
         const{ token, URL } = this.$route.query;
-        console.log('edit', this.edit)
-        console.log('editCategory', this.editCategory)
         fetch(`${URL}/api/categories/${this.editid}/`, {
           method: "put",
           headers: {
@@ -125,5 +123,7 @@ getCategories: function(){
 </script>
 
 <style>
+  
+  
   
 </style>

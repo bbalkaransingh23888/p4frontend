@@ -3,21 +3,21 @@
     <div id="nav">
       <Header v-bind:URL="URL" v-bind:loggedIn="loggedIn" @logout="logout"/>
       <router-view  @loggedIn='login($event)' v-bind:loggedIn="loggedIn"/>
-      <Footer/>
+      <!-- <Footer/> -->
     </div>
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 
 
 export default {
   name: 'App',
   components: {
     Header,
-    Footer 
+    // Footer 
   },
   data:function(){
     return {
