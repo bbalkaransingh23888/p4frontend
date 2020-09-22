@@ -56,69 +56,67 @@ export default {
     }
   },
   //Fixed categories CRUD, thanks Rosemary!
-  created: function(){
-    this.getCategories();
+    created: function(){
+      this.getCategories();
     },
-     methods: {
-newCategory: function(){
-    const{ token, URL, username } = this.$route.query;
-    fetch(`${URL}/api/categories/`, {
-      method: "post",
-      headers: {
-        authorization: `JWT ${token}`,
-        "Content-Type": "application/json" 
+  methods: {
+    newCategory: function(){
+      const{ token, URL, username } = this.$route.query;
+      fetch(`${URL}/api/categories/`, {
+        method: "post",
+        headers: {
+          authorization: `JWT ${token}`,
+          "Content-Type": "application/json" 
+        },
+        body: JSON.stringify({ name: this.category , owner: username}),
+        }).then(() => {
+          this.getCategories();
+        });
       },
-      body: JSON.stringify({ name: this.category , owner: username}),
-      }).then(() => {
-        this.getCategories();
-      });
-    },
-getCategories: function(){
+    getCategories: function(){
       const { token, URL } = this.$route.query;
       fetch(`${URL}/api/categories/`, {
         method: "get",
         headers: {
           authorization: `JWT ${token}`,
         },
-        })
-        .then((response) => response.json())
-        .then((data) => {
-          this.categories = data.results;
-          console.log(data.results[0].games)
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        this.categories = data.results;
         });
       },
     deleteCategory: function(id){
-        const{ token, URL } = this.$route.query;
-        // const id = event.target.id
-        console.log(id)
-        fetch(`${URL}/api/categories/${id}/`, {
-          method: "delete",
-          headers: {
-            authorization: `JWT ${token}`,
-          },
-        }).then(() => {
-          this.getCategories()
-        });
-      },
-      editSelect: function(id, content){
-        this.editid = id
-        this.edit = content
-      },
-      editCategory: function(){
-        const{ token, URL } = this.$route.query;
-        fetch(`${URL}/api/categories/${this.editid}/`, {
-          method: "put",
-          headers: {
-            authorization: `JWT ${token}`,
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({name: this.edit})
-        })
-        .then(() => {
+      const{ token, URL } = this.$route.query;
+      // const id = event.target.id
+      fetch(`${URL}/api/categories/${id}/`, {
+        method: "delete",
+        headers: {
+          authorization: `JWT ${token}`,
+        },
+      }).then(() => {
+        this.getCategories()
+      });
+    },
+    editSelect: function(id, content){
+      this.editid = id
+      this.edit = content
+    },
+    editCategory: function(){
+      const{ token, URL } = this.$route.query;
+      fetch(`${URL}/api/categories/${this.editid}/`, {
+        method: "put",
+        headers: {
+          authorization: `JWT ${token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({name: this.edit})
+      })
+      .then(() => {
         this.getCategories();
       });
     },
-   }
+  }
 }
 </script>
 

@@ -14,6 +14,9 @@
 
 <script>
 
+//Thanks Lia for pointing me in the right direction to fix 
+//the initial login issues
+
 export default {
   name: 'Login',
   data: function(){
@@ -24,7 +27,6 @@ export default {
   },
   methods: {
       handleLogin: function(){
-          console.log(this.$route.query.URL)
           fetch(`${this.$route.query.URL}/auth/users/login/`, {    
               method: 'post',
               headers: {
@@ -35,7 +37,7 @@ export default {
                   password: this.lPassword,
               }),
           })
-          //Jendri's solution to login issue, thanks! 
+          //Jendri's solution to the wrong-username/pw-still-logs-you-in issue, thanks! 
           .then(response => {
             if (response.status !==200){
               response.json()
