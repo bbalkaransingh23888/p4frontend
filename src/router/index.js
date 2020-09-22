@@ -28,7 +28,8 @@ Vue.use(VueRouter)
   {
     path: '/signup',
     name: 'Signup',
-    component: Signup
+    component: Signup,
+    props: true
   }
 ]
 
