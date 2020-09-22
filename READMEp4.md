@@ -70,5 +70,6 @@ Post-MVP:
 |mini-projects, make some games|Medium|4Hrs.|||
 
 Additional Libraries:
-1) Bootstrap
+1) Buefy
 2) Vue
+3) Bootstrap (post-MVP)
