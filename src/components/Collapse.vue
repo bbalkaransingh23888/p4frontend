@@ -34,7 +34,7 @@
             <b-input maxlength="1000" type="textarea" v-model="gameadditionalinfo"></b-input>
           </b-field>
   
-          <b-button type="is-danger" @click="newGame(category_id, owner)">Create Game</b-button><br/><br/>
+          <b-button type="is-danger" @click="newGame(category_id)">Create Game</b-button><br/><br/>
           <!-- Game form ends -->
         </div>
       </div>
@@ -45,7 +45,7 @@
 <script>
 export default {
   name: "Collapse",
-  props: ["loggedIn", "category_id", "owner"], 
+  props: ["loggedIn", "category_id"], 
   data: function(){
     return {
       gametitle:  "",
@@ -56,11 +56,11 @@ export default {
     }
   },
   methods: {
-    newGame: function(category_id, owner){
+    newGame: function(category_id){
       const{ token, URL} = this.$route.query;
       // const id = event.target.id
       console.log("category", category_id)
-      console.log("owner", owner)
+      // console.log("owner", owner)
       console.log("title", this.gametitle) 
       console.log("image_url", this.gameimage) 
       console.log("game_url", this.gameurl) 
@@ -74,7 +74,7 @@ export default {
         },
         body: JSON.stringify({ 
           //Note to self: key is what you have in your backend, and value is this.<frontend equivalent>
-          title:this.gametitle , category: category_id, owner:owner, image_url:this.gameimage, 
+          title:this.gametitle , category: category_id, image_url:this.gameimage, 
           game_url:this.gameurl, description:this.gamedescription, additional_info:this.game}),
         }).then(() => {
         //this.getCategories();
