@@ -1,11 +1,11 @@
 <template>
   <div class="login">
           <b-field label="Username" type="is-success">
-              <b-input v-model="username"></b-input>
+              <b-input v-model="lUsername"></b-input>
           </b-field>
 
           <b-field label="Password" type="is-success">
-              <b-input type="password" v-model="password" password-reveal></b-input>
+              <b-input type="password" v-model="lPassword" password-reveal></b-input>
           </b-field>
        <br/>
        <button class="button is-success" @click="handleLogin"> Log In </button>
@@ -18,8 +18,8 @@ export default {
   name: 'Login',
   data: function(){
     return {
-    username: "",
-    password: "",
+    lUsername: "",
+    lPassword: "",
     };
   },
   methods: {
@@ -31,8 +31,8 @@ export default {
                   "Content-Type": "application/json",
               },
               body: JSON.stringify({
-                  username: this.username,
-                  password: this.password,
+                  username: this.lUsername,
+                  password: this.lPassword,
               }),
           })
           //Jendri's solution to login issue, thanks! 

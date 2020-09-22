@@ -52,7 +52,7 @@ export default {
       category: "",
       edit: "",
       editid: null,
-      //games: [],
+      // games: [],
     }
   },
   //Fixed categories CRUD, thanks Rosemary!

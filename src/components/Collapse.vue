@@ -57,11 +57,15 @@ export default {
   },
   methods: {
     newGame: function(category_id, owner){
-      const{ token, URL, username } = this.$route.query;
+      const{ token, URL} = this.$route.query;
       // const id = event.target.id
-      console.log("-------",category_id, owner)
-      console.log(URL, token, username)
-      console.log(this.gametitle, this.gameimage, this.gameurl, this.gamedescription, this.gameadditionalinfo)
+      console.log("category", category_id)
+      console.log("owner", owner)
+      console.log("title", this.gametitle) 
+      console.log("image_url", this.gameimage) 
+      console.log("game_url", this.gameurl) 
+      console.log("description", this.gamedescription)
+      console.log("additional_info", this.gameadditionalinfo)
       fetch(`${URL}/api/games/`, {
         method: "post",
         headers: {
@@ -69,6 +73,7 @@ export default {
           "Content-Type": "application/json" 
         },
         body: JSON.stringify({ 
+          //Note to self: key is what you have in your backend, and value is this.<frontend equivalent>
           title:this.gametitle , category: category_id, owner:owner, image_url:this.gameimage, 
           game_url:this.gameurl, description:this.gamedescription, additional_info:this.game}),
         }).then(() => {
