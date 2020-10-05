@@ -6,10 +6,10 @@ Project Schedule:
 |Day|Deliverable|Status|
 |---|-----------|------|
 |Day 1|Project Worksheet|Complete|
-|Days 3-5|Core Application Structure|Incomplete|
-|Days 3-5|Connect Frontend and Backend|Incomplete|
-|Days 3-5|Styling, Bootstrap|Incomplete|
-|Day 5|MVP; debug|Incomplete|
+|Days 3-5|Core Application Structure|Complete|
+|Days 3-5|Connect Frontend and Backend|Complete|
+|Days 3-5|Styling, Buefy/Bulma|Complete|
+|Day 5|MVP; debug|In Progress|
 |Day 6-9|Post-MVP(hopefully)|Incomplete|
 
 
@@ -20,7 +20,9 @@ This is the frontend repo for a gamesite app. Basically, it would be like one of
 
 Project link: 
 GitHub Repo: https://github.com/bbalkaransingh23888/p4frontend.git
+
 Backend Repo: https://github.com/bbalkaransingh23888/p4backend.git
+
 Google Sheet link: https://docs.google.com/spreadsheets/d/1MiYUM5Rr0hr_9kbYVNgYzxu88jngsMA9udl1Ox-z7Vw/edit#gid=0
 
 
