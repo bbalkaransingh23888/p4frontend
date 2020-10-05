@@ -20,6 +20,7 @@ This is the frontend repo for a gamesite app. Basically, it would be like one of
 
 Project link: 
 GitHub Repo: https://github.com/bbalkaransingh23888/p4frontend.git
+Backend Repo: https://github.com/bbalkaransingh23888/p4backend.git
 Google Sheet link: https://docs.google.com/spreadsheets/d/1MiYUM5Rr0hr_9kbYVNgYzxu88jngsMA9udl1Ox-z7Vw/edit#gid=0
 
 
@@ -60,7 +61,7 @@ MVP:
 |Responsive styling|Low|< 1 Hr.||| 		
 |HTML and CSS|Low|< 1 Hr.||| 		
 |Hamburger menu (Bootstrap)|Low|< 1 Hr.|||
-|Bootstrap (Styling, Log in, Sign Up, etc.)|High|3 Hrs.|||	
+|Buefy/Bulma(Styling, Log in, Sign Up, etc.)|High|3 Hrs.|||	
 		
 
 Post-MVP:
@@ -68,8 +69,9 @@ Post-MVP:
 |Component|Difficulty|Est. Time|Time Invested|Actual Time|
 |---------|--------------------|---------|-------------|-----------|
 |mini-projects, make some games|Medium|4Hrs.|||
+|Bootstrap|Very Low||||
 
 Additional Libraries:
 1) Buefy
 2) Vue
-3) Bootstrap (post-MVP)
+3) Bootstrap (post-MVP)?
