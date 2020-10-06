@@ -1,79 +1,31 @@
-Brandon Balkaransingh
-Project Worksheet – Project Four – Final Project - Frontend
-SEI-pineapple
+# This VUE Template
 
-Project Schedule:
-|Day|Deliverable|Status|
-|---|-----------|------|
-|Day 1|Project Worksheet|Complete|
-|Days 3-5|Core Application Structure|Complete|
-|Days 3-5|Connect Frontend and Backend|Complete|
-|Days 3-5|Styling, Buefy/Bulma|Complete|
-|Day 5|MVP; debug|In Progress|
-|Day 6-9|Post-MVP(hopefully)|Incomplete|
+## Setup
 
+- Fork This Repo on Github
 
-Project Description:
-This is the frontend repo for a gamesite app. Basically, it would be like one of those free game sites where you can play games on your computer. The difference is that you would have to log in and actually save the links to the games you want to play. One could also make their own games (or their own versions) and save them on here to show to prospective employers, an additional project showcase if you will.
+- Clone it to your computer
 
+- cd into folder
 
+- Remove the remote (```git remote rm origin```)
 
-Project link: 
-GitHub Repo: https://github.com/bbalkaransingh23888/p4frontend.git
+- run ```npm install```
 
-Backend Repo: https://github.com/bbalkaransingh23888/p4backend.git
+## Project Reference
 
-Google Sheet link: https://docs.google.com/spreadsheets/d/1MiYUM5Rr0hr_9kbYVNgYzxu88jngsMA9udl1Ox-z7Vw/edit#gid=0
+This Template includes
 
+- Vue (https://vuejs.org/v2/guide/)
 
-Wireframes:
+- Vue Router (https://router.vuejs.org/)
 
-Login: https://www.figma.com/file/KdMRIXSB9gRxc03yxhnhkZ/Untitled?node-id=0%3A1
+- Buefy (https://buefy.org/)
 
-Category: https://www.figma.com/file/KdMRIXSB9gRxc03yxhnhkZ/Untitled?node-id=1%3A7
+## Template Features
 
-Games: https://www.figma.com/file/KdMRIXSB9gRxc03yxhnhkZ/Untitled?node-id=1%3A9
- 
+- Premade header and footer component using Buefy/Bulma, put your router links in the header component, customize these to your likings to give your page a consistent layout
 
-Time-Priority-Index: 
-https://docs.google.com/document/d/1_gs-IZrjV9KuPCdeL8XAsMTU0re5MtEnDue9dB0HAeE/edit
- 
-MVP list:
-1)	Full CRUD to create, read, update/edit, and delete a quote all on the front end utilizing backend CRUD functions
-2)	Deploy to Vercel
-3)	Responsiveness 
-4)	Basic HTML and CSS
-5)	Hamburger menu
+- Router routes are defined in the router folder, create your pages in the views folder
 
-
-
-
-Post-MVP: 
-1)	mini-projects, make some games
-2)  Bootstrap styling
-
-Functional Components: 
-
-MVP:
-
-|Component|Priority|Est. Time|Time Invested|Actual Time|
-|---------|--------|---------|-------------|-----------|
-|Full CRUD on frontend (Vue)|HIGH|7 Hrs.||| 		
-|Deploy to vercel|Medium|< 1 Hr.||| 		
-|Responsive styling|Low|< 1 Hr.||| 		
-|HTML and CSS|Low|< 1 Hr.||| 		
-|Hamburger menu (Bootstrap)|Low|< 1 Hr.|||
-|Buefy/Bulma(Styling, Log in, Sign Up, etc.)|High|3 Hrs.|||	
-		
-
-Post-MVP:
-
-|Component|Difficulty|Est. Time|Time Invested|Actual Time|
-|---------|--------------------|---------|-------------|-----------|
-|mini-projects, make some games|Medium|4Hrs.|||
-|Bootstrap|Very Low||||
-
-Additional Libraries:
-1) Buefy
-2) Vue
-3) Bootstrap (post-MVP)?
+- In the components folder there is a Template.vue which can be copied to make new components
