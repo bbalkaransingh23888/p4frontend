@@ -62,7 +62,7 @@ export default {
   methods: {
     newCategory: function(){
       const{ token, URL, username } = this.$route.query;
-      fetch(`${URL}/api/categories/`, {
+      fetch(`${URL}api/categories/`, {
         method: "post",
         headers: {
           authorization: `JWT ${token}`,
@@ -75,7 +75,7 @@ export default {
       },
     getCategories: function(){
       const { token, URL } = this.$route.query;
-      fetch(`${URL}/api/categories/`, {
+      fetch(`${URL}api/categories/`, {
         method: "get",
         headers: {
           authorization: `JWT ${token}`,
@@ -89,7 +89,7 @@ export default {
     deleteCategory: function(id){
       const{ token, URL } = this.$route.query;
       // const id = event.target.id
-      fetch(`${URL}/api/categories/${id}/`, {
+      fetch(`${URL}api/categories/${id}/`, {
         method: "delete",
         headers: {
           authorization: `JWT ${token}`,
@@ -104,7 +104,7 @@ export default {
     },
     editCategory: function(){
       const{ token, URL } = this.$route.query;
-      fetch(`${URL}/api/categories/${this.editid}/`, {
+      fetch(`${URL}api/categories/${this.editid}/`, {
         method: "put",
         headers: {
           authorization: `JWT ${token}`,

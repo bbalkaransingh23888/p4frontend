@@ -30,47 +30,43 @@
 
 export default {
   name: 'Signup',
+  props: ["url"],
   data: function(){
     return {
         sUsername: "",
         sPassword: "",
         firstName: "",
         lastName: "",
-        email: ""
+        email: "",
     };
   },
   methods: {
       handleSignup: function(){
-          console.log(this.$route.query.URL)
-          fetch(`${this.$route.query.URL}/auth/users/register/`, {    
-              method: 'post',
-              headers: {
-                  "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                  username: this.sUsername,
-                  password: this.sPassword,
-                  first_name: this.firstName,
-                  last_name: this.lastName,
-                  email: this.email
-              }),
-          })
-          .then(response => {
-            if (response.status !==200){
-              response.json()
-            } else {
-              return response.json()
-            }
-          })
-          .then(data => {
-            console.log('data', data)
-            if (data){
-              this.$emit('loggedIn', data)
-            } else {
-              alert('Invalid Registration')
-            }
+      fetch(`${this.URL}auth/users/register/`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: this.sUsername,
+          password: this.sPassword,
+          email: this.email,
+          firstName: this.firstName,
+          lastName: this.lastName
+        }),
+      })
+        .then((response) => {
+          response.json();
+        })
+        .then((data) => {
+          this.no_console = data;
+          this.$buefy.toast.open({
+            message: "Sign up successful! Now login in to continue.",
+            duration: 1000,
+            type: 'is-success'
           });
-      },
-   },
+        });
+    },
+  },
 }
 </script>
